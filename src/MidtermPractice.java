@@ -31,6 +31,12 @@ public class MidtermPractice {
         map.put("z", 5);
         System.out.println(countOddNumbers(map));
 
+        HashMap<String, Integer> test = new HashMap<>();
+        test.put("why", 7);
+        test.put("hello", 8);
+        test.put("brilliant", 99);
+        System.out.println(countLongWords(test));
+
         List<String> tester = new ArrayList<>();
         tester.add("apple");
         tester.add("apricot");
@@ -63,7 +69,13 @@ public class MidtermPractice {
      * Example: input: ["why"=7, "hello"=8, "brilliant"=99, "world"=15, "amazing"=17] -> output: 2
      */
     public static int countLongWords(Map<String, Integer> map) {
-        return -1;
+        int count = 0;
+        for(String key : map.keySet()) {
+            if(key.length() > 5) {
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
