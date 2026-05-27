@@ -14,15 +14,21 @@ public class MidtermPractice {
         System.out.println(findLongestWord(list));
 
 
-        float[] myFloats = new float[5];
+        float[] myFloats = new float[4];
         myFloats[0] = 1.5f;
-        myFloats[0] = 3.5f;
-        myFloats[0] = 2.0f;
-        myFloats[0] = 3.0f;
+        myFloats[1] = 3.5f;
+        myFloats[2] = 2.0f;
+        myFloats[3] = 3.0f;
         System.out.println(findAverage(myFloats));
 
         int[] arr = {3, 6, 9};
         System.out.println(allDivisibleBy3(arr));
+
+        List<String> tester = new ArrayList<>();
+        tester.add("apple");
+        tester.add("apricot");
+        tester.add("chipotle");
+        System.out.println(allStartWithA(tester));
 
         
     }
@@ -60,7 +66,7 @@ public class MidtermPractice {
      * Example: input: [1.5, 3.5, 2.0, 3.0] -> output: 2.5
      */
     public static double findAverage(float[] arr) {
-        float total = 0;
+        double total = 0;
         for(int i=0; i<arr.length; i++){
             total += arr[i];
         }
@@ -101,7 +107,12 @@ public class MidtermPractice {
      * Example: input: ["apple", "banana", "avocado"] -> output: false
      */
     public static boolean allStartWithA(List<String> list) {
-        return false;
+        for(int i=0; i<list.size(); i++){
+            if(list.get(i).charAt(0) != 'a'){
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
