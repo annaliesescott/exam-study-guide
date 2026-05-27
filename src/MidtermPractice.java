@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -7,6 +8,23 @@ public class MidtermPractice {
         // After implementing a method, call it here with
         // some sample input and print the result to
         // check if it works. Fix any issues you find.
+        List<String> list = new ArrayList<>();
+        list.add("apple");
+        list.add("banana");
+        System.out.println(findLongestWord(list));
+
+
+        float[] myFloats = new float[5];
+        myFloats[0] = 1.5f;
+        myFloats[0] = 3.5f;
+        myFloats[0] = 2.0f;
+        myFloats[0] = 3.0f;
+        System.out.println(findAverage(myFloats));
+
+        int[] arr = {3, 6, 9};
+        System.out.println(allDivisibleBy3(arr));
+
+        
     }
 
     /**
@@ -16,7 +34,13 @@ public class MidtermPractice {
      * Example: input: ["apple", "banana", "kiwi"] -> output: "banana"
      */
     public static String findLongestWord(List<String> list) {
-        return "";
+        String max = "";
+        for(int i=0; i<list.size(); i++){
+            if(list.get(i).length()>max.length()){
+                max = list.get(i);
+            }
+        }
+        return max;
     }
 
     /**
@@ -36,7 +60,11 @@ public class MidtermPractice {
      * Example: input: [1.5, 3.5, 2.0, 3.0] -> output: 2.5
      */
     public static double findAverage(float[] arr) {
-        return -1.0;
+        float total = 0;
+        for(int i=0; i<arr.length; i++){
+            total += arr[i];
+        }
+        return total/arr.length;
     }
 
     /**
@@ -57,7 +85,12 @@ public class MidtermPractice {
      * Example 2: input: [3, 4, 6, 9] -> output: false
      */
     public static boolean allDivisibleBy3(int[] arr) {
-        return false;
+        for(int i=0; i<arr.length; i++){
+            if(arr[i]%3!=0){
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
