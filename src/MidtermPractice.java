@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -23,6 +24,12 @@ public class MidtermPractice {
 
         int[] arr = {3, 6, 9};
         System.out.println(allDivisibleBy3(arr));
+
+        HashMap<String, Integer> map = new HashMap<>();
+        map.put("a", 7);
+        map.put("x", 4);
+        map.put("z", 5);
+        System.out.println(countOddNumbers(map));
 
         List<String> tester = new ArrayList<>();
         tester.add("apple");
@@ -80,7 +87,13 @@ public class MidtermPractice {
      * Example: input: {"a"=7, "x"=4, "z"=5} -> output: 2
      */
     public static int countOddNumbers(Map<String, Integer> map) {
-        return -1;
+        int count = 0;
+        for(String key : map.keySet()) {
+            if(map.get(key) % 2 != 0) {
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
